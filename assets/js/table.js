@@ -31,14 +31,17 @@ $(document).ready(function() {
         let sorted;
         if(k===0) {
             k++;
+            $("#id>#idsort").toggleClass("fa-sort fa-sort-up");
          sorted=[...trs].sort((a,b)=>numSort(a.children[0].innerHTML,b.children[0].innerHTML));
         }
         else if(k===1){
             k++;
+            $("#id>#idsort").toggleClass("fa-sort-up fa-sort-down");
          sorted=[...trs].sort((a,b)=>numSort(b.children[0].innerHTML,a.children[0].innerHTML));
         }
         else {
             k=0;
+            $("#id>#idsort").toggleClass("fa-sort-down fa-sort");
             sorted=[...trs]
         }
         $('.tbody').text('');
@@ -53,14 +56,17 @@ $(document).ready(function() {
         var sorted;
         if(n===0) {
             n++;
+            $("#name>#namesort").toggleClass("fa-sort fa-sort-up");
             sorted=[...trs].sort((a,b)=>strSort(a.children[1].innerHTML,b.children[1].innerHTML));
         }
         else if(n===1){
             n++;
+            $("#name>#namesort").toggleClass("fa-sort-up fa-sort-down");
             sorted=[...trs].sort((a,b)=>strSort(b.children[1].innerHTML,a.children[1].innerHTML));
         }
         else {
             n=0;
+            $("#name>#namesort").toggleClass("fa-sort-down fa-sort");
             sorted=[...trs]
         }
         $('.tbody').text('');
@@ -69,18 +75,22 @@ $(document).ready(function() {
             $(".tbody").append(s);
         }
     });
+    var l=0;
     $("#cost").click(function () {
         let sorted;
-        if(k===0) {
-            k++;
+        if(l===0) {
+            l++;
+            $("#cost>#costsort").toggleClass("fa-sort fa-sort-up");
             sorted=[...trs].sort((a,b)=>numSort(a.children[2].innerHTML,b.children[2].innerHTML));
         }
-        else if(k===1){
-            k++;
+        else if(l===1){
+            l++;
+            $("#cost>#costsort").toggleClass("fa-sort-up fa-sort-down");
             sorted=[...trs].sort((a,b)=>numSort(b.children[2].innerHTML,a.children[2].innerHTML));
         }
         else {
-            k=0;
+            l=0;
+            $("#cost>#costsort").toggleClass("fa-sort-down fa-sort");
             sorted=[...trs]
         }
         $('.tbody').text('');
@@ -89,18 +99,22 @@ $(document).ready(function() {
             $(".tbody").append(s);
         }
     });
+    var t=0;
     $("#count").click(function () {
         let sorted;
-        if(k===0) {
-            k++;
+        if(t===0) {
+            t++;
+            $("#count>#countsort").toggleClass("fa-sort fa-sort-up");
             sorted=[...trs].sort((a,b)=>numSort(a.children[3].innerHTML,b.children[3].innerHTML));
         }
-        else if(k===1){
-            k++;
+        else if(t===1){
+            t++;
+            $("#count>#countsort").toggleClass("fa-sort-up fa-sort-down");
             sorted=[...trs].sort((a,b)=>numSort(b.children[3].innerHTML,a.children[3].innerHTML));
         }
         else {
-            k=0;
+            t=0;
+            $("#count>#countsort").toggleClass("fa-sort-down fa-sort");
             sorted=[...trs]
         }
         $('.tbody').text('');
