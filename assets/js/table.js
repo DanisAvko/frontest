@@ -1,19 +1,14 @@
 var tableLine = Array(
-    {id: "10", name: "CPS", cost: "302", count: "3"},
-    {id: "5", name: "AIphone", cost: "400", count: "5"},
-    {id: "2", name: "DXBOX", cost: "300", count: "7"},
-    {id: "3", name: "CPS", cost: "302", count: "3"},
-    {id: "100", name: "CPS", cost: "302", count: "3"},
-    {id: "101", name: "CPS", cost: "302", count: "3"},
-    {id: "51", name: "AIphone", cost: "400", count: "5"},
-    {id: "21", name: "DXBOX", cost: "300", count: "7"},
-    {id: "31", name: "CPS", cost: "302", count: "3"},
-    {id: "1001", name: "CPS", cost: "302", count: "3"},
-    {id: "102", name: "CPS", cost: "302", count: "3"},
-    {id: "52", name: "AIphone", cost: "400", count: "5"},
-    {id: "22", name: "DXBOX", cost: "300", count: "7"},
-    {id: "32", name: "CPS", cost: "302", count: "3"},
-    {id: "102", name: "CPS", cost: "302", count: "3"}
+    {id: "10", name: "PS3", cost: "30200", count: "3"},
+    {id: "5", name: "Iphone 8", cost: "40000", count: "5"},
+    {id: "2", name: "XBOX", cost: "3002", count: "7"},
+    {id: "3", name: "PS4", cost: "302", count: "31"},
+    {id: "100", name: "Iphone 9", cost: "60000", count: "32"},
+    {id: "101", name: "G10", cost: "32202", count: "14"},
+    {id: "51", name: "MaPhone", cost: "40", count: "522"},
+    {id: "21", name: "SEGA", cost: "3001", count: "71"},
+    {id: "31", name: "CBS", cost: "12", count: "113"},
+    {id: "1001", name: "CPS", cost: "302", count: "300"}
 );
 
 function tSort(a, b, index) {
