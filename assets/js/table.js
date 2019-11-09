@@ -1,10 +1,10 @@
-var tableLine=new Map([
-    ["10",{id:"10",name:"CPS",cost:"302",count:"3"}],
-    ["5",{id:"5",name:"AIphone",cost:"400",count:"5"}],
-    ["2",{id:"2",name:"DXBOX",cost:"300",count:"7"}],
-    ["3",{id:"3",name:"CPS",cost:"302",count:"3"}],
-    ["100",{id:"100",name:"CPS",cost:"302",count:"3"}]
-]);
+var tableLine=Array(
+    {id:"10",name:"CPS",cost:"302",count:"3"},
+    {id:"5",name:"AIphone",cost:"400",count:"5"},
+    {id:"2",name:"DXBOX",cost:"300",count:"7"},
+    {id:"3",name:"CPS",cost:"302",count:"3"},
+    {id:"100",name:"CPS",cost:"302",count:"3"}
+);
 var numSort= (a, b)=>a-b;
 function strSort(a,b) {
     if(a>b){
@@ -17,8 +17,9 @@ function strSort(a,b) {
 }
 
 $(document).ready(function() {
-   [...tableLine.values()].forEach(
-       function (value) {
+    console.log(tableLine);
+   $.each(tableLine,
+       function (index,value) {
            $('.tbody').append(`<tr >\n +
                              <td >${value.id}</td>\n" +
                              <td>${value.name}</td>\n" +
@@ -153,7 +154,6 @@ $(document).ready(function() {
     });
     $("#add").click(function () {
         let dataId=$("#dataId");
-        console.log(isFinite("12k3")&& value === parseInt(value, 10));
        if(dataId.val()===''){
            alert("Введите идентификатор");
        } else if(!isFinite(dataId.val())){
@@ -167,7 +167,7 @@ $(document).ready(function() {
             cost:$('#dataCost').val(),
             count:$('#dataCount').val()
         };
-        tableLine.set(dataId.val(),item);
+        tableLine.push(item);
         $(".tbody").append(`<tr >\n +
         <td>${item.id}</td>\n" +
         <td>${item.name}</td>\n" +
@@ -194,7 +194,13 @@ $(document).ready(function() {
     $('table').delegate('button','click',function(e) {
         let trId=e.currentTarget.parentElement.id;
         $(`#${trId}`).parent().remove();
-        tableLine.delete(trId);
+        $.each(tableLine,function (index,value) {
+            if(value.id===trId) {
+                tableLine.splice(tableLine.indexOf(value),1);
+                return false;
+            }
+        });
+        console.log(tableLine);
         trs =$('#table>tbody>tr');
     });
 });
