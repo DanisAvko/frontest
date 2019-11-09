@@ -40,62 +40,86 @@
 
 <main role="main" class="flex-shrink-0">
     <div class="container">
-        <table id="table" class="table">
-            <thead class="thead-light">
-            <tr >
-                <th id="id" class="sorted" scope="col"  >Идентификатор <i id="idsort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="name" class="sorted" scope="col">Название <i id="namesort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="cost" class="sorted" scope="col">Стоимость <i id="costsort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="count" class="sorted" scope="col">Количество <i id="countsort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="btns"  scope="col"></th>
-            </tr>
-            </thead>
-            <tbody id="tbody" class="tbody">
 
-            </tbody>
-        </table>
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#dataModal">Добавить</button>
-        <div id="dataModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Введите данные</h4>
-                        <button id="close" class="close" data-dismiss="modal">x</button>
+        <div class="row">
+            <div class="col-8">
+                <table id="table" class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th id="id" class="sorted" scope="col">Идентификатор <i id="idsort" class="fa fa-sort"
+                                                                                aria-hidden="true"></i></th>
+                        <th id="name" class="sorted" scope="col">Название <i id="namesort" class="fa fa-sort"
+                                                                             aria-hidden="true"></i></th>
+                        <th id="cost" class="sorted" scope="col">Стоимость <i id="costsort" class="fa fa-sort"
+                                                                              aria-hidden="true"></i></th>
+                        <th id="count" class="sorted" scope="col">Количество <i id="countsort" class="fa fa-sort"
+                                                                                aria-hidden="true"></i></th>
+                        <th id="btns" scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody" class="tbody">
+
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#dataModal">Добавить
+                </button>
+                <div id="dataModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Введите данные</h4>
+                                <button id="close" class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Идентификатор</span>
+                                    </div>
+                                    <input id="dataId" type="text" class="form-control" aria-label="Small"
+                                           aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Название</span>
+                                    </div>
+                                    <input id="dataName" type="text" class="form-control" aria-label="Small"
+                                           aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Стоимость</span>
+                                    </div>
+                                    <input id="dataCost" type="text" class="form-control" aria-label="Small"
+                                           aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Количество</span>
+                                    </div>
+                                    <input id="dataCount" type="text" class="form-control" aria-label="Small"
+                                           aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="add" class="btn btn-default">Добавить</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" >Идентификатор</span>
-                            </div>
-                            <input id="dataId" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" >Название</span>
-                            </div>
-                            <input id="dataName" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" >Стоимость</span>
-                            </div>
-                            <input id="dataCost" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Количество</span>
-                            </div>
-                            <input id="dataCount" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="add" class="btn btn-default" >Добавить</button>
-                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="jumbotron">
+                    <h1 class="display-4">Hello, world!</h1>
+                    <p class="lead">Это простой пример блока с компонентом в стиле jumbotron для привлечения дополнительного внимания к содержанию или информации.</p>
+                    <hr class="my-4">
+                    <p>Использются служебные классы для типографики и расстояния содержимого в контейнере большего размера.</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-
 </main>
 
 
