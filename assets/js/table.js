@@ -63,11 +63,20 @@ $(document).ready(function () {
 
     $("#add").click(function () {
         let dataId = $("#dataId");
-        let dataName=$('#dataName');
-        let dataCost  =$('#dataCost');
-        let dataCount=$('#dataCount');
-        if (dataId.val() === ''||dataName.val()===''||dataCost.val()===''||dataCount.val()==='') {
+        let dataName = $('#dataName');
+        let dataCost = $('#dataCost');
+        let dataCount = $('#dataCount');
+
+        function flag() {
+            for (let r in tableLine) {
+                if (tableLine[r].id === dataId.val()) return true;
+            }
+        }
+
+        if (dataId.val() === '' || dataName.val() === '' || dataCost.val() === '' || dataCount.val() === '') {
             alert("Введите данные");
+        } else if (flag()) {
+            alert("Идентификатор уже существует");
         } else {
             let item = {
                 id: dataId.val(),
