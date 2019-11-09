@@ -13,7 +13,6 @@
 </head>
 <body>
 <header>
-    <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Fixed navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,14 +40,14 @@
 
 <main role="main" class="flex-shrink-0">
     <div class="container">
-        <table id="table" class="table" border="2px solid">
-            <thead class="line">
+        <table id="table" class="table">
+            <thead class="thead-light">
             <tr >
-                <th id="id" >Идентификатор <i id="idsort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="name">Название <i id="namesort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="cost">Стоимость <i id="costsort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="count">Количество <i id="countsort" class="fa fa-sort" aria-hidden="true"></i></th>
-                <th id="btns"></th>
+                <th id="id" scope="col"  >Идентификатор <i id="idsort" class="fa fa-sort" aria-hidden="true"></i></th>
+                <th id="name" scope="col">Название <i id="namesort" class="fa fa-sort" aria-hidden="true"></i></th>
+                <th id="cost" scope="col">Стоимость <i id="costsort" class="fa fa-sort" aria-hidden="true"></i></th>
+                <th id="count" scope="col">Количество <i id="countsort" class="fa fa-sort" aria-hidden="true"></i></th>
+                <th id="btns" scope="col"></th>
             </tr>
             </thead>
             <tbody id="tbody" class="tbody">

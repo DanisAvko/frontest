@@ -4,7 +4,7 @@ html {
 }
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 footer {
     position: absolute;
@@ -17,15 +17,3 @@ main > .container {
     padding: 60px 15px 0;
 }
 
-.right-sidebar {
-    float: left;
-    width: 250px;
-    margin-left: -250px;
-    position: relative;
-    background: #FFACAA;
-}
-.middle {
-    width: 100%;
-    padding: 0 0 100px;
-    position: relative;
-}
