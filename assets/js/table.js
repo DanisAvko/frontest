@@ -18,10 +18,10 @@ var tableLine = Array(
 
 function tSort(a, b, index) {
     if (index === "name") {
-        if (a > b) return 1
-        else if (a < b) return -1
-        else return 0
-    } else return b - a
+        if (a > b) return 1;
+        else if (a < b) return -1;
+        else return 0;
+    } else return b - a;
 }
 
 $(document).ready(function () {
@@ -37,7 +37,7 @@ $(document).ready(function () {
         }
     );
 
-    let trs = $('#table>tbody>tr');
+    var trs = $('#table>tbody>tr');
     $(".sorted").click(function (e) {
         let sorted;
         let currenChildId = e.currentTarget.children[0].id;
@@ -68,11 +68,18 @@ $(document).ready(function () {
 
     $("#add").click(function () {
         let dataId = $("#dataId");
+
+        function flag() {
+            for (let r in tableLine) {
+                if (tableLine[r].id === dataId.val()) return true;
+            }
+        }
+
         if (dataId.val() === '') {
             alert("Введите идентификатор");
         } else if (!isFinite(dataId.val())) {
             alert("Идентификатор не число");
-        } else if (tableLine.hasOwnProperty(dataId.val())) {
+        } else if (flag()) {
             alert("Идентификатор уже существует");
         } else {
             let item = {
