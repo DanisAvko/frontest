@@ -114,7 +114,6 @@ $(document).ready(function () {
                 return false;
             }
         });
-        console.log(tableLine);
         trs = $('#table>tbody>tr');
     });
 });
