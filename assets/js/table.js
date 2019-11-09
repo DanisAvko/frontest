@@ -63,25 +63,17 @@ $(document).ready(function () {
 
     $("#add").click(function () {
         let dataId = $("#dataId");
-
-        function flag() {
-            for (let r in tableLine) {
-                if (tableLine[r].id === dataId.val()) return true;
-            }
-        }
-
-        if (dataId.val() === '') {
-            alert("Введите идентификатор");
-        } else if (!isFinite(dataId.val())) {
-            alert("Идентификатор не число");
-        } else if (flag()) {
-            alert("Идентификатор уже существует");
+        let dataName=$('#dataName');
+        let dataCost  =$('#dataCost');
+        let dataCount=$('#dataCount');
+        if (dataId.val() === ''||dataName.val()===''||dataCost.val()===''||dataCount.val()==='') {
+            alert("Введите данные");
         } else {
             let item = {
                 id: dataId.val(),
-                name: $('#dataName').val(),
-                cost: $('#dataCost').val(),
-                count: $('#dataCount').val()
+                name: dataName.val(),
+                cost: dataCost.val(),
+                count: dataCount.val()
             };
             tableLine.push(item);
             $(".tbody").append(`<tr >\n +
