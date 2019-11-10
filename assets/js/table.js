@@ -96,7 +96,7 @@ $(document).ready(function () {
             $("#dataName").val("");
             $("#dataCost").val("");
             $("#dataCount").val("");
-            trs = $('#table>tbody>tr');
+            trs.push($('#table>tbody>tr')[$('#table>tbody>tr').length-1]);
             $("#dataModal").modal('hide');
         }
     });
