@@ -27,7 +27,7 @@ $(document).ready(function () {
                              <td>${value.name}</td>\n" +
                              <td>${value.cost}</td>\n" +
                              <td>${value.count}</td>\n" +
-                             <td id="${value.id}"><button type="button"  class="close" ><i class="fa fa-times" aria-hidden="true"></i></button></td>\n" +
+                             <td data-id="${value.id}"><button type="button"  class="close" ><i class="fa fa-times" aria-hidden="true"></i></button></td>\n" +
                            </tr>`);
         }
     );
@@ -90,7 +90,7 @@ $(document).ready(function () {
         <td>${item.name}</td>\n" +
         <td>${item.cost}</td>\n" +
         <td>${item.count}</td>\n" +
-        <td id="${item.id}"><button type="button"  class="close" ><i class="fa fa-times" aria-hidden="true"></i></button></td>\n" +
+        <td data-id="${item.id}"><button type="button"  class="close" ><i class="fa fa-times" aria-hidden="true"></i></button></td>\n" +
         </tr>`);
             dataId.val("");
             $("#dataName").val("");
@@ -109,13 +109,12 @@ $(document).ready(function () {
     });
 
     $('table').delegate('button', 'click', function (e) {
-        let trId = e.currentTarget.parentElement.id;
-        $(`#${trId}`).parent().remove();
+        let trId = $(e.currentTarget.parentElement).attr('data-id');
+        $(e.currentTarget.parentElement).parent().remove();
         $.each(tableLine, function (index, value) {
             if (value.id === trId) {
-                let ind=tableLine.indexOf(value);
-                tableLine.splice(ind, 1);
-                trs.splice(ind,1);
+                tableLine.splice(index, 1);
+                trs.splice(index,1);
                 return false;
             }
         });
