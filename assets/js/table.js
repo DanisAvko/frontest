@@ -113,10 +113,11 @@ $(document).ready(function () {
         $(`#${trId}`).parent().remove();
         $.each(tableLine, function (index, value) {
             if (value.id === trId) {
-                tableLine.splice(tableLine.indexOf(value), 1);
+                let ind=tableLine.indexOf(value);
+                tableLine.splice(ind, 1);
+                trs.splice(ind,1);
                 return false;
             }
         });
-        trs = $('#table>tbody>tr');
     });
 });
